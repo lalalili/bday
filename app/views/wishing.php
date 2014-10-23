@@ -22,6 +22,11 @@
     <script src="js/controllers/mainCtrl.js"></script> <!-- load our controller -->
     <script src="js/services/wishService.js"></script> <!-- load our service -->
     <script src="js/app.js"></script> <!-- load our application -->
+    <!--[if lte IE 8]>
+    <script type="text/javascript">
+        alert(" 系統不支援您的瀏覽器，請改用 IE9.0 (含)以上版本，或 Firefox , Chrome");
+    </script>
+    <![endif]-->
 
 </head>
 <!-- declare our angular app and controller -->
@@ -41,8 +46,8 @@
     <!-- Wishes -->
     <!-- hide these wishes if the loading variable is true -->
     <div class="comment" ng-hide="loading" ng-repeat="wish in wishes">
-        <h3><small>Wish from : {{ wish.from }} ~ {{ wish.created_at }}</h3>
-        <p><h3>{{ wish.message }}</h3></p>
+        <h3><small>Wish from : <span ng-bind="wish.from"></span> ~ <span ng-bind="wish.created_at"></span></h3>
+        <p><h3><span ng-bind="wish.message">Loading ...</span></h3></p>
         <!-- <p><a href="#" ng-click="deleteWish(wish.id)" class="text-muted">Delete</a></p>-->
     </div>
 

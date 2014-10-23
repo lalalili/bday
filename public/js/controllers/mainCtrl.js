@@ -8,7 +8,7 @@ angular.module('mainCtrl', [])
         var to = $location.url().split('=')[1];
 
         $scope.loading = true;
-1
+
         // GET ALL WISH ====================================================
 //               Wish.get()
 //                  .success(function(data) {
@@ -64,7 +64,9 @@ angular.module('mainCtrl', [])
         $scope.wishData = {from: $location.url().split('=')[1]};
         var from = $location.url().split('=')[1];
         $scope.loading = true;
-        $scope.change = function(){ $scope.wishData = {from: $location.url().split('=')[1],to:$scope.toData.to}};
+        $scope.change = function () {
+            $scope.wishData = {from: $location.url().split('=')[1], to: $scope.toData.to}
+        };
 
         // GET ALL WISH ====================================================
         Wish.getbday()

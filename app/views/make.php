@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en" ng-app="wishApp">
+<html lang="en" ng-app="wishApp" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="UTF-8">
@@ -38,7 +38,7 @@
     <!-- load our application -->
     <!--[if lte IE 8]>
     <script type="text/javascript">
-            alert(" 請改用 IE9.0 (含)以上版本，或改用Firefox , Chrome 瀏覽器");
+            alert("系統不支援您的瀏覽器，請改用 IE9.0 (含)以上版本，或 Firefox , Chrome");
     </script>
     <![endif]-->
 
@@ -58,7 +58,7 @@
         <!-- From -->
         <div class="form-group">
             <h3>
-                <small>From : {{wishData.from}}</small>
+                <small>From : <span ng-bind="wishData.from"></span></small>
             </h3>
         </div>
 
@@ -122,9 +122,9 @@
     </div>
     <div class="comment" ng-hide="loading" ng-repeat="wish in wishes">
         <h3>
-            <small>Wish to : {{ wish.to }} ~ {{ wish.created_at }}
+            <small>Wish to : <span ng-bind="wish.to"></span> ~ <span ng-bind="wish.created_at"></span>
         </h3>
-        <p><h4>{{ wish.message }}</h4></p>
+        <p><h4><span ng-bind="wish.message" >  Loading ...</span></h4></p>
         <p><a href="#" ng-click="deleteWish(wish.id)" class="text-muted">Delete</a></p>
     </div>
 
